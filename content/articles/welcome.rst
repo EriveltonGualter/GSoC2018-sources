@@ -1,11 +1,11 @@
-GsoC Week 1
-##########################
+Welcome to Octave and Google Summer of Code
+###########################################
 
-:date: 2017-10-21 1:47
-:modified: 2017-10-27 1:18
+:date: 2018-04-23 2:46
+:modified: 2018-05-15 2:46
 :tags: GSoC, Octave
 :category: GSoC
-:slug: gsoc-week1
+:slug: welcome-gsoc
 :authors: Erivelton Gualter
 
 This summer I got accepeted to the Summer Google of Code under the GNU Octave. This program, admistred by Google, facilates the emergence of students to the Open Source Community.  My primary goal to participate in the GSoC is to build a long term relationship with the open source community.  I want to take it serious and get involved.  I have been using a lot of open source tools, and now I fell it is time to contribute for it.

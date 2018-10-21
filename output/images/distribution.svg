@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   id="svg8"
+   version="1.1"
+   viewBox="0 0 227.2681 127.09566"
+   height="127.09566mm"
+   width="227.2681mm">
+  <defs
+     id="defs2" />
+  <metadata
+     id="metadata5">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     transform="translate(-15.209727,-20.110979)"
+     id="layer1">
+    <g
+       id="g823">
+      <rect
+         style="opacity:1;fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.11902916;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:normal"
+         id="rect815"
+         width="224.14906"
+         height="123.97663"
+         x="-240.9183"
+         y="-145.64713"
+         rx="0.025641248"
+         transform="scale(-1)" />
+      <rect
+         style="opacity:1;fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.88020647;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:normal"
+         id="rect817"
+         width="224.17557"
+         height="7.0259447"
+         x="-240.83853"
+         y="-28.660879"
+         rx="0.02562684"
+         transform="scale(-1)" />
+    </g>
+    <text
+       id="text886"
+       y="27.311769"
+       x="17.554747"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:6.34960651px;line-height:125%;font-family:Sawasdee;-inkscape-font-specification:Sawasdee;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.15874013px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"><tspan
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Sawasdee;-inkscape-font-specification:Sawasdee;stroke-width:0.15874013px"
+         y="27.311769"
+         x="17.554747"
+         id="tspan884">sisotool - Control System Designer v0</tspan></text>
+    <g
+       transform="translate(0,0.61074005)"
+       id="g1406">
+      <rect
+         style="opacity:1;fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:normal"
+         id="rect819-3-6"
+         width="77.514473"
+         height="49.514469"
+         x="25.810505"
+         y="34.052742"
+         rx="0.022498632" />
+      <rect
+         style="opacity:1;fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:normal"
+         id="rect819-3-6-7"
+         width="77.514473"
+         height="49.514469"
+         x="25.810503"
+         y="89.421371"
+         rx="0.022498632" />
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:6.55118132px;line-height:125%;font-family:Sawasdee;-inkscape-font-specification:Sawasdee;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.16377951px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         x="64.566452"
+         y="43.866566"
+         id="text886-3"><tspan
+           id="tspan884-3"
+           x="64.566452"
+           y="43.866566"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:5.29166698px;font-family:Sawasdee;-inkscape-font-specification:'Sawasdee Bold';text-align:center;text-anchor:middle;stroke-width:0.16377951px">UI Elements</tspan><tspan
+           x="64.566452"
+           y="52.370422"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:5.29166698px;font-family:Sawasdee;-inkscape-font-specification:'Sawasdee Bold';text-align:center;text-anchor:middle;stroke-width:0.16377951px"
+           id="tspan908">Buttons, Box and menus.</tspan><tspan
+           x="64.566452"
+           y="60.874275"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:5.29166698px;font-family:Sawasdee;-inkscape-font-specification:'Sawasdee Bold';text-align:center;text-anchor:middle;stroke-width:0.16377951px"
+           id="tspan912" /><tspan
+           x="65.512131"
+           y="69.063255"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:5.29166698px;font-family:Sawasdee;-inkscape-font-specification:'Sawasdee Bold';text-align:center;text-anchor:middle;stroke-width:0.16377951px"
+           id="tspan914">Set parameters of the </tspan><tspan
+           x="64.566452"
+           y="77.567108"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:5.29166698px;font-family:Sawasdee;-inkscape-font-specification:'Sawasdee Bold';text-align:center;text-anchor:middle;stroke-width:0.16377951px"
+           id="tspan916">sisotool</tspan></text>
+      <path
+         style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.26499999;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         d="m 38.1,97.76875 v 38.1"
+         id="path926" />
+      <path
+         style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         d="M 31.75,130.3125 H 94.456249"
+         id="path928" />
+      <path
+         style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         d="M 38.364583,130.04791 C 43.006942,116.16478 49.24758,102.85246 92.604165,102.79583"
+         id="path930" />
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:6.55118132px;line-height:125%;font-family:Sawasdee;-inkscape-font-specification:Sawasdee;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.16377951px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         x="42.545471"
+         y="96.970917"
+         id="text886-2"><tspan
+           id="tspan884-6"
+           x="42.545471"
+           y="96.970917"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Sawasdee;-inkscape-font-specification:Sawasdee;stroke-width:0.16377951px">Step Response</tspan></text>
+    </g>
+    <g
+       transform="translate(0,-0.52916667)"
+       id="g1391">
+      <g
+         id="g1374"
+         transform="translate(0,1.1814314e-6)">
+        <rect
+           rx="0.035912316"
+           y="35.193214"
+           x="110.09403"
+           height="104.81643"
+           width="123.72861"
+           id="rect819"
+           style="opacity:1;fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.63220519;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:normal" />
+        <g
+           transform="translate(-4.1235352e-6,1.1071355)"
+           id="g1368">
+          <path
+             style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+             d="M 116.26355,86.494293 H 227.65313"
+             id="path1308" />
+          <path
+             style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+             d="M 171.95834,38.472417 V 134.51617"
+             id="path1310" />
+        </g>
+      </g>
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:6.55118132px;line-height:125%;font-family:Sawasdee;-inkscape-font-specification:Sawasdee;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.16377951px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         x="115.54024"
+         y="66.636696"
+         id="text886-2-2"><tspan
+           id="tspan884-6-6"
+           x="115.54024"
+           y="66.636696"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:Sawasdee;-inkscape-font-specification:'Sawasdee Bold';stroke-width:0.16377951px">Root Locus Editor</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:6.55118132px;line-height:125%;font-family:Sawasdee;-inkscape-font-specification:Sawasdee;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.16377951px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         x="203.31097"
+         y="61.038708"
+         id="text886-2-7"><tspan
+           id="tspan884-6-9"
+           x="203.31097"
+           y="61.038708"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.58611107px;font-family:Sawasdee;-inkscape-font-specification:'Sawasdee Bold';text-align:center;text-anchor:middle;stroke-width:0.16377951px">Open-Loop Bode Editor</tspan><tspan
+           x="203.31097"
+           y="69.718948"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.58611107px;font-family:Sawasdee;-inkscape-font-specification:'Sawasdee Bold';text-align:center;text-anchor:middle;stroke-width:0.16377951px"
+           id="tspan1410">&quot;Margin Plot&quot;</tspan></text>
+      <text
+         id="text886-2-7-4"
+         y="111.34831"
+         x="203.31097"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:6.55118132px;line-height:125%;font-family:Sawasdee;-inkscape-font-specification:Sawasdee;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.16377951px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         xml:space="preserve"><tspan
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.58611107px;font-family:Sawasdee;-inkscape-font-specification:'Sawasdee Bold';text-align:center;text-anchor:middle;stroke-width:0.16377951px"
+           y="111.34831"
+           x="203.31097"
+           id="tspan884-6-9-1">Open-Loop Bode Editor</tspan><tspan
+           id="tspan1410-0"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.58611107px;font-family:Sawasdee;-inkscape-font-specification:'Sawasdee Bold';text-align:center;text-anchor:middle;stroke-width:0.16377951px"
+           y="120.02856"
+           x="203.31097">&quot;Phase Plot&quot;</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:6.55118132px;line-height:125%;font-family:Sawasdee;-inkscape-font-specification:Sawasdee;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.16377951px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         x="124.29221"
+         y="115.60468"
+         id="text886-2-2-4"><tspan
+           id="tspan884-6-6-8"
+           x="124.29221"
+           y="115.60468"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:Sawasdee;-inkscape-font-specification:'Sawasdee Bold';stroke-width:0.16377951px">Nyquist Plot </tspan></text>
+    </g>
+  </g>
+</svg>

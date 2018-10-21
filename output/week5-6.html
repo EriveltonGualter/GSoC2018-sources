@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta id="viewport" name="viewport" content="width=500" />
+    <!--RSS FEEDS-->
+        <link rel="alternate" href="https://eriveltongualter.github.io/GSoC2018/feeds/all.rss.xml" type="application/rss+xml" title="Erivelton's GSoC 2018 Full RSS Feed"/>
+
+    <title>Back to Coding // Erivelton's GSoC 2018</title>
+    <link rel="stylesheet" href="./theme/css/normalize.css" type="text/css" />
+    <link rel="stylesheet" href="./theme/css/base.css" type="text/css" />
+    <link rel="stylesheet" href="./theme/css/code.css" type="text/css" />
+<link rel="stylesheet" href="./theme/css/article.css" type="text/css" />
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+            tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]},
+            TeX: { equationNumbers: { autoNumber: "all" } }
+        });
+    </script>
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</head>
+<body>
+    <!--Top image-->
+    <div class="container">
+        <div class="topimage">
+            <img src="theme/images/gsococtave.png">
+        </div>
+    </div>
+
+    <!--Links and site title-->
+    <div class="topbar">
+        <span><a href="./">Erivelton's GSoC 2018</a></span>
+        <ul>
+                <li><a href="./pages/about.html">About</a></li>
+                <li><a href="./blog.html">Blog</a></li>
+                <li><a href="./pages/documentation.html">Documentation</a></li>
+        </ul>
+    </div>
+    <!--Content, footer, and scripts-->
+    <div class="container">
+    <div class="page-title">
+        <h1>Back to Coding</h1>
+        <p style="text-align:justify">June 24, 2018 &mdash; under
+            <a class="post-category" href="./tag/gsoc.html">GSoC</a>,
+            <a class="post-category" href="./tag/octave.html">Octave</a>
+        </p>
+    </div>
+    <p>Results from the first evaluation came 9 days ago. All of the three gsoc student were successful! For the readers of my blog, you can find them at <a class="reference external" href="http://planet.octave.org/">http://planet.octave.org/</a>. If you already a reader of planet octave, you are in the right place.</p>
+<p>The feedback from my mentors could not better and doable. Basically, it consisted of:</p>
+<ul class="simple">
+<li>Start writing some documentation on the capabilities of the tool;</li>
+<li>Write a checklist of the pieces of the tool that are working;</li>
+<li>Test the tool in other common platforms (MacOS and Windows);</li>
+<li>Improve on commenting throughout the code.</li>
+</ul>
+<p>Therefore, this last couple of weeks was divided into two tasks. During the first week, I started working with UIMENU elements. The second week, I completed some of the tasks in which my mentors mentioned in the evaluation and fixed some bugs from the menu.</p>
+<p><strong>Uimenu elements</strong></p>
+<p>UI components are the user's interface controls, such as buttons, check boxes, and sliders. In case you already follow this blog, you noticed that the first concept of sisotool already has buttons, radio buttons, sliders and ckeckbox to perform the design of a controller by adding/adjusting and removing poles, zeros and gains.</p>
+<p>The next UI components, I added uimenus in the interface. They are the menus we found at the top of the page, such as File, Edit, Tools, and Help for the majority of tools. Therefore, for the first week, I added the following menus:</p>
+<ul class="simple">
+<li>View;</li>
+<li>Add;</li>
+<li>Controller.</li>
+</ul>
+<div class="figure align-center">
+<object data="images/uimenu.svg" style="width: 800px;" type="image/svg+xml">
+alternate text</object>
+</div>
+<p><em>View Menu</em></p>
+<p>To display the desired diagrams, the user has the option to go to the top of the main interface and press <em>View</em>. It will open three different options: Root Locus, Bode, and Nyquist Diagram. Additionaly, we can use the shortcut as despicted in the figure above.</p>
+<p><em>Add Menu</em></p>
+<p>To add poles and zeros, complex or not, the user now has the alternative to go to the top of the page, click in <em>Add</em> and choose the desired option. Right now, only the poles/zeros are working. The Integrator, Differentiator, Lead and Lag are still pending tasks.</p>
+<p><em>Controller Menu</em></p>
+<p>For now, it consists of only the submenu <em>Save</em>. It will store the controller in a variable C in the workspace and save it to a Mat file.</p>
+<p><strong>Feedback Evaluation Tasks</strong></p>
+<p>During the second week after the evaluation period, I started adjusting the code according to my mentors' feedback and I am adding more comments for the code. Therefore, the first thing I did was to cleaneup the code and add more comments. Additionally, I added a Documentation page to my website to centralize all the information about the tool.</p>
+<p>For now, you will find on the documentation page about how to download, install and run the sisotool. One of my tasks of this week is to add more to this page. I will add more explanation on how to desing a simple controller and provide an example. Also, I will use this page to create a checklist of pieces of the tool which are working and also which are pending.</p>
+<p>You can go to the top of this page and click on <em>Documentation</em> or click in this link: <a class="reference external" href="https://eriveltongualter.github.io/GSoC2018/pages/documentation.html">https://eriveltongualter.github.io/GSoC2018/pages/documentation.html</a></p>
+<p>See you in my next post.</p>
+
+
+    <div class="comments">
+        <div id="disqus_thread"></div>
+        <script type="text/javascript">
+            /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+            var disqus_shortname = "https-eriveltongualter-github-io-gsoc2018"; // required: replace example with your forum shortname
+
+            /* * * DON'T EDIT BELOW THIS LINE * * */
+            (function() {
+                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    </div>
+
+
+
+<div class="container bottom">
+    <hr>
+    <p>
+        Theme created by <a href="https://github.com/jcrist">Jim Crist</a>.
+        Licensed under <a href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons</a>.
+    </p>
+    <p>
+    Find me on <a href="https://twitter.com/EGualter">Twitter</a>, <a 
+        href="https://github.com/EriveltonGualter">GitHub</a>, old personal <a href="https://eriveltongualter.github.io/">webpage</a>, or shoot me an <a
+    href="mailto:erivelton.gualter@gmail.com">email</a>.
+    </p>
+</div>    </div>
+</body>
+</html>

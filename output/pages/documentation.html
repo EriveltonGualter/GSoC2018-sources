@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta id="viewport" name="viewport" content="width=500" />
+    <!--RSS FEEDS-->
+        <link rel="alternate" href="https://eriveltongualter.github.io/GSoC2018/feeds/all.rss.xml" type="application/rss+xml" title="Erivelton's GSoC 2018 Full RSS Feed"/>
+
+    <title>Documentation // Erivelton's GSoC 2018</title>
+    <link rel="stylesheet" href="../theme/css/normalize.css" type="text/css" />
+    <link rel="stylesheet" href="../theme/css/base.css" type="text/css" />
+    <link rel="stylesheet" href="../theme/css/code.css" type="text/css" />
+    <link rel="stylesheet" href="../theme/css/page.css" type="text/css" />
+</head>
+<body>
+    <!--Top image-->
+    <div class="container">
+        <div class="topimage">
+            <img src="theme/images/gsococtave.png">
+        </div>
+    </div>
+
+    <!--Links and site title-->
+    <div class="topbar">
+        <span><a href="../">Erivelton's GSoC 2018</a></span>
+        <ul>
+                <li><a href="../pages/about.html">About</a></li>
+                <li><a href="../blog.html">Blog</a></li>
+                <li><a href="../pages/documentation.html">Documentation</a></li>
+        </ul>
+    </div>
+    <!--Content, footer, and scripts-->
+    <div class="container">
+    <h1 class="page-title">Documentation</h1>
+    <a href="https://raw.githubusercontent.com/EriveltonGualter/GSoC2018/master/images/sisotool_overview.png" title="sisotool" target="_blank"><img class="avatar2" src="https://raw.githubusercontent.com/EriveltonGualter/GSoC2018/master/images/sisotool_overview.png" /></a><p>The <strong>Interactive Tool for Single Input Single Output (SISO) Linear Control System Design</strong> let you design SISO controllers for feedback system modeled in GNU Octave.</p>
+<p>Currently, it presents the following functionalities:</p>
+<ul class="simple">
+<li>Interactive plots: Bode, Root Locus and Nyquist diagrams;</li>
+<li>Root Locus graphical editos for adding, modifyng, and removing controller poles, zeros and gains.</li>
+<li>Analyze control system designs using time-domain by step responses.</li>
+<li>Save the controller to workspace.</li>
+<li>Arbitrary list of response plots.</li>
+<li>Compare response plots for multiple control system designs.</li>
+<li>Tune compensators for different loop control structures.</li>
+</ul>
+<div class="section" id="instalation">
+<h2>Instalation</h2>
+<p>To get the latest updates as they come, install sisotool from git. To download the repository execute the following from the command line:</p>
+<div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">clone</span> <span class="n">git</span><span class="p">@</span><span class="n">github</span><span class="p">.</span><span class="n">com</span><span class="p">:</span><span class="n">EriveltonGualter</span><span class="o">/</span><span class="n">octave</span><span class="o">-</span><span class="n">control</span><span class="p">.</span><span class="n">git</span>
+</pre></div>
+<p>To update to the latest version, go into your repository and execute:</p>
+<div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">pull</span> <span class="n">origin</span> <span class="n">master</span>
+</pre></div>
+<p>Open GNU Octave and go to the folder <em>octave-control/TARGET</em>. Then, run the following commands to install:</p>
+<div class="highlight"><pre><span></span><span class="n">pkg</span> <span class="n">install</span> <span class="n">control</span><span class="o">-</span><span class="mf">3.1</span><span class="p">.</span><span class="mi">0</span><span class="n">_gsoc</span><span class="p">.</span><span class="n">tar</span><span class="p">.</span><span class="n">gz</span>
+</pre></div>
+<p>After installation, you need to load the control package and finally run the sisotool as following:</p>
+<div class="highlight"><pre><span></span><span class="n">pkg</span> <span class="n">load</span> <span class="n">control</span>
+</pre></div>
+</div>
+<div class="section" id="run-sisotool">
+<h2>Run sisotool</h2>
+<p><strong>sisotool (G)</strong> specifies the plant model G to be used in the SISO Tool.  Here G is any linear model created with TF, ZPK, or SS.</p>
+<p><strong>sisotool (G, C, H, F)</strong> further specify values for the feedback compensator C, sensor H, and prefilter F. By default, C, H, and F are all unit gains.</p>
+<p><strong>sisotool (..., VIEWS)</strong> specifies the initial set of views for graphically editing C. You can set VIEWS to any of the following strings or combination of strings:</p>
+<ul class="simple">
+<li><em>'rlocus'</em> : Root locus plot.</li>
+<li><em>'bode'</em> : Bode diagram of the open-loop response.</li>
+<li><em>'nichols'</em> : Nichols plot of the open-loop response.</li>
+</ul>
+<p>Example:</p>
+<div class="highlight"><pre><span></span><span class="n">G</span> <span class="p">=</span> <span class="n">zpk</span><span class="p">([],[</span><span class="o">-</span><span class="mi">10</span> <span class="o">-</span><span class="mi">2</span><span class="p">],</span><span class="mf">0.01</span><span class="p">);</span>      <span class="c">% Plant</span>
+<span class="n">C</span> <span class="p">=</span> <span class="n">zpk</span><span class="p">([</span><span class="o">-</span><span class="mi">2</span> <span class="o">-</span><span class="mi">20</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="mi">1000</span><span class="p">);</span>   <span class="c">% Controller</span>
+
+<span class="n">sisotool</span><span class="p">(</span><span class="n">G</span><span class="p">);</span>
+<span class="n">sisotool</span><span class="p">(</span><span class="n">G</span><span class="p">,</span><span class="n">C</span><span class="p">);</span>
+<span class="n">sisotool</span><span class="p">(</span><span class="n">G</span><span class="p">,</span><span class="n">C</span><span class="p">,</span> <span class="s">&#39;bode&#39;</span><span class="p">);</span>
+<span class="n">sisotool</span><span class="p">(</span><span class="n">G</span><span class="p">,</span><span class="n">C</span><span class="p">,</span> <span class="s">&#39;locus&#39;</span><span class="p">,</span><span class="s">&#39;bode&#39;</span><span class="p">);</span>
+</pre></div>
+<p>Additionally, the user can also add the plant at following edit box.</p>
+<div class="figure align-center">
+<img alt="alternate text" src="images/final6.png" />
+</div>
+</div>
+<div class="section" id="display-diagrams">
+<h2>Display Diagrams</h2>
+<p>Sisotool can show three different diagrams plus the step response which will be always displayed in the main tool. The interactive diagrams are: Root locus, Nyquist and Bode. The user can select the check box with the desired diagrams; Select the tab View or either using the shortcuts as showing in the following image:</p>
+<div class="figure align-center">
+<img alt="alternate text" src="images/final7.png" style="width: 800px;" />
+</div>
+</div>
+<div class="section" id="design-a-controller">
+<h2>Design a Controller</h2>
+<p>In order to desing a controller, the user tool provides many options to support this task. The user can add, adjust and remove poles, zeros, gains, differentiator and integrator transfer function. Therefore the user can:</p>
+<ul class="simple">
+<li>Select the radio button &quot;Add&quot; and select the desired feature;</li>
+<li>Go to Add -&gt; 'x' Real Pole (for example);</li>
+<li>Press with right button on Root Locus Diagram, then Add Pole/Zero;</li>
+<li>Or by using the icons in the top of Root Locus Diagram.</li>
+</ul>
+<div class="figure align-center">
+<img alt="alternate text" src="images/final8.png" style="width: 800px;" />
+</div>
+<p>Then, the user can add the feature to the desired position; adjust the position or delete the feature. Additionally, the user can open the <strong>Edit Controller Tool</strong> by clicking in the top of the page.</p>
+<div class="figure align-center">
+<object data="images/final9.svg" style="width: 800px;" type="image/svg+xml">
+alternate text</object>
+</div>
+</div>
+<div class="section" id="compare-controllers-performance">
+<h2>Compare Controllers Performance</h2>
+<p>In order to compare the performance of two or more different control system designs, we need to salve all the desired compensators using the button Save.  All the controllers will be saved and can be showed in the tab &quot;Controller/Desing.../...&quot;</p>
+<div class="figure align-center">
+<img alt="alternate text" src="images/final4.png" />
+</div>
+</div>
+<div class="section" id="control-architecture">
+<h2>Control Architecture</h2>
+<p>In sisotool you can also specify multiple models for any plant or sensor using an array of LTI models (see Model Arrays). This tool can be execute in the following way. The front-end of this functionality is working; however, it still need a bit work in order to upload the LTI system.</p>
+<div class="figure align-center">
+<object data="images/final10.svg" style="width: 800px;" type="image/svg+xml">
+alternate text</object>
+</div>
+<p><strong>Questions</strong></p>
+<p>If you have a question about installation or sisotool in general, feel free to contact myself. In addition, Octave mailing list is an excellent source of community support.</p>
+<p>If you think there’s a bug or you would like to request a feature, please open an issue <a class="reference external" href="https://github.com/EriveltonGualter/octave-control/issues">ticket</a>.</p>
+</div>
+
+
+<div class="container bottom">
+    <hr>
+    <p>
+        Theme created by <a href="https://github.com/jcrist">Jim Crist</a>.
+        Licensed under <a href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons</a>.
+    </p>
+    <p>
+    Find me on <a href="https://twitter.com/EGualter">Twitter</a>, <a 
+        href="https://github.com/EriveltonGualter">GitHub</a>, old personal <a href="https://eriveltongualter.github.io/">webpage</a>, or shoot me an <a
+    href="mailto:erivelton.gualter@gmail.com">email</a>.
+    </p>
+</div>    </div>
+</body>
+</html>

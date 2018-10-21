@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta id="viewport" name="viewport" content="width=500" />
+    <!--RSS FEEDS-->
+        <link rel="alternate" href="https://eriveltongualter.github.io/GSoC2018/feeds/all.rss.xml" type="application/rss+xml" title="Erivelton's GSoC 2018 Full RSS Feed"/>
+
+    <title>Community Bonding Period // Erivelton's GSoC 2018</title>
+    <link rel="stylesheet" href="./theme/css/normalize.css" type="text/css" />
+    <link rel="stylesheet" href="./theme/css/base.css" type="text/css" />
+    <link rel="stylesheet" href="./theme/css/code.css" type="text/css" />
+<link rel="stylesheet" href="./theme/css/article.css" type="text/css" />
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+            tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]},
+            TeX: { equationNumbers: { autoNumber: "all" } }
+        });
+    </script>
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</head>
+<body>
+    <!--Top image-->
+    <div class="container">
+        <div class="topimage">
+            <img src="theme/images/gsococtave.png">
+        </div>
+    </div>
+
+    <!--Links and site title-->
+    <div class="topbar">
+        <span><a href="./">Erivelton's GSoC 2018</a></span>
+        <ul>
+                <li><a href="./pages/about.html">About</a></li>
+                <li><a href="./blog.html">Blog</a></li>
+                <li><a href="./pages/documentation.html">Documentation</a></li>
+        </ul>
+    </div>
+    <!--Content, footer, and scripts-->
+    <div class="container">
+    <div class="page-title">
+        <h1>Community Bonding Period</h1>
+        <p style="text-align:justify">May 15, 2018 &mdash; under
+            <a class="post-category" href="./tag/gsoc.html">GSoC</a>,
+            <a class="post-category" href="./tag/octave.html">Octave</a>
+        </p>
+    </div>
+    <p>The community bonding period is over. The past 3 weeks were really busy because I was in my finals week, final projects and my doctoral research. However, I basically completed everything I wanted to before the “Coding officially begins!”:</p>
+<ul class="simple">
+<li>Finished Optimal Control and Intelligent Control System classes;</li>
+<li>Submitted a conference paper;</li>
+<li>Finished a draft journal paper.</li>
+</ul>
+<p>It was a busy period.</p>
+<p>In concurrence with all the activities that were going on, I had a few discussions with my mentors Douglas Stewart and John Swensen. As, cited in the previous post, the main goal of the project will be to develop the &quot;back-end&quot; capable of performing the same tasks with the current version and for the &quot;front-end&quot;, the UI Elements will be used since it is more similar to the older version of sisotool.</p>
+<div class="section" id="some-notes">
+<h2>Some Notes</h2>
+<p>Octave already has a package called control created by Lukas Reichlin and is being maintained by Alexander Wilms and Doug Stewart. There is an extended list of function which can be found here: <a class="reference external" href="https://octave.sourceforge.io/control/overview.html">https://octave.sourceforge.io/control/overview.html</a>.</p>
+<p>The sisotool project will take advantage of plot functions from control package in order to create the desired interface. The following shows some of the scripts that will be used:</p>
+<ul class="simple">
+<li>bode.m;</li>
+<li>rlocus.m;</li>
+<li>nyquist.m.</li>
+</ul>
+<p><strong>Plot Diagrams</strong></p>
+<p>For those who do not know what is bode diagram, it can be defined as a plot that shows the gain and phase response of a LTI system. Here you can find a better explanation about the theory behind it: <a class="reference external" href="https://en.wikibooks.org/wiki/Control_Systems/Bode_Plots">https://en.wikibooks.org/wiki/Control_Systems/Bode_Plots</a></p>
+<p>The bode function uses a LTI system as an input and the output can be the magnitude, phase and frequency vectors. It also displays the plots. In this community bonding period, I spent quite some time modifying the previous scritp in order to understand how it was coded.  Here is some code examples to plot bode diagram and others:</p>
+<div class="highlight"><pre><span></span><span class="n">pkg</span> <span class="n">load</span> <span class="n">control</span> <span class="c">% Load control package</span>
+
+<span class="n">s</span> <span class="p">=</span> <span class="n">tf</span><span class="p">(</span><span class="s">&#39;s&#39;</span><span class="p">);</span>
+
+<span class="n">sys1</span> <span class="p">=</span> <span class="mi">50</span><span class="o">*</span><span class="p">(</span><span class="n">s</span><span class="o">+</span><span class="mi">3</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">s</span>^ <span class="mi">3</span><span class="o">-</span><span class="n">s</span>^ <span class="mi">2</span><span class="o">+</span><span class="mi">11</span><span class="o">*</span><span class="n">s</span><span class="o">-</span><span class="mi">51</span><span class="p">);</span>
+<span class="n">sys2</span> <span class="p">=</span> <span class="p">(</span><span class="n">s</span> <span class="o">+</span> <span class="mi">10</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">s</span><span class="o">*</span><span class="p">(</span><span class="n">s</span> <span class="o">+</span> <span class="mi">5</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">s</span> <span class="o">+</span> <span class="mi">15</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">s</span>^<span class="mi">2</span> <span class="o">+</span> <span class="mi">25</span><span class="p">));</span>
+<span class="n">sys3</span> <span class="p">=</span> <span class="p">(</span><span class="n">s</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span> <span class="p">(</span><span class="n">s</span><span class="o">-</span><span class="mi">3</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">s</span><span class="o">+</span><span class="mi">4</span><span class="p">)</span> <span class="p">)</span>
+<span class="n">sys4</span> <span class="p">=</span> <span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="n">s</span>^<span class="mi">2</span><span class="o">+</span><span class="mi">2</span><span class="o">*</span><span class="n">s</span><span class="o">+</span><span class="mi">5</span><span class="p">);</span>
+
+<span class="n">bode</span><span class="p">(</span><span class="n">sys1</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span> <span class="mi">10</span><span class="p">]);</span>  <span class="c">% Shows the diagram from 1 to 10 Hz</span>
+
+<span class="n">figure</span><span class="p">;</span>
+<span class="n">bode</span><span class="p">(</span><span class="n">sys2</span><span class="p">,</span> <span class="s">&#39;r&#39;</span><span class="p">);</span>
+
+<span class="n">figure</span><span class="p">;</span>
+<span class="n">bode</span><span class="p">(</span><span class="n">sys4</span><span class="p">,</span> <span class="s">&#39;r&#39;</span><span class="p">);</span>
+
+<span class="n">figure</span><span class="p">;</span>
+<span class="n">bode</span><span class="p">(</span><span class="n">sys1</span><span class="p">,</span> <span class="n">sys2</span><span class="p">,</span> <span class="n">sys3</span><span class="p">,</span> <span class="n">sys4</span><span class="p">);</span>
+
+<span class="n">figure</span><span class="p">;</span>
+<span class="n">rlocus</span><span class="p">(</span><span class="n">sys1</span><span class="p">);</span>
+
+<span class="n">figure</span><span class="p">;</span>
+<span class="n">nyquist</span><span class="p">(</span><span class="n">sys1</span><span class="p">);</span>
+</pre></div>
+<p>More documentation about these functions can be found here:</p>
+<ul class="simple">
+<li><a class="reference external" href="https://octave.sourceforge.io/control/function/bode.html">https://octave.sourceforge.io/control/function/bode.html</a></li>
+<li><a class="reference external" href="https://octave.sourceforge.io/control/function/nyquist.html">https://octave.sourceforge.io/control/function/nyquist.html</a></li>
+<li><a class="reference external" href="https://octave.sourceforge.io/control/function/rlocus.html">https://octave.sourceforge.io/control/function/rlocus.html</a></li>
+</ul>
+<p><strong>Initial layout – sisotool v1</strong></p>
+<p>The figure above shows the initial concept for the sisotool. For the initial layout, all the diagrams will be fixed. It will contain: Root Locus, Open-Loop Bode, Nyquist and Step Response plots. In addition, there will be UI Elements with designer applications for the controller.</p>
+<div class="figure align-center">
+<object data="images/distribution.svg" style="width: 600px;" type="image/svg+xml">
+alternate text</object>
+</div>
+<p><strong>Repository</strong></p>
+<p>I forked and created a repository for the control package, in order to download it, you can:</p>
+<div class="highlight"><pre><span></span><span class="n">hg</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">bitbucket</span><span class="p">.</span><span class="n">org</span><span class="o">/</span><span class="n">egualter</span><span class="o">/</span><span class="n">octave</span><span class="o">-</span><span class="n">control</span>
+</pre></div>
+</div>
+
+
+    <div class="comments">
+        <div id="disqus_thread"></div>
+        <script type="text/javascript">
+            /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+            var disqus_shortname = "https-eriveltongualter-github-io-gsoc2018"; // required: replace example with your forum shortname
+
+            /* * * DON'T EDIT BELOW THIS LINE * * */
+            (function() {
+                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    </div>
+
+
+
+<div class="container bottom">
+    <hr>
+    <p>
+        Theme created by <a href="https://github.com/jcrist">Jim Crist</a>.
+        Licensed under <a href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons</a>.
+    </p>
+    <p>
+    Find me on <a href="https://twitter.com/EGualter">Twitter</a>, <a 
+        href="https://github.com/EriveltonGualter">GitHub</a>, old personal <a href="https://eriveltongualter.github.io/">webpage</a>, or shoot me an <a
+    href="mailto:erivelton.gualter@gmail.com">email</a>.
+    </p>
+</div>    </div>
+</body>
+</html>

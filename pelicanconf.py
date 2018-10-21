@@ -7,8 +7,7 @@ AUTHOR = u'Erivelton Gualter'
 SITENAME = u"Erivelton's GSoC 2018"
 SITEDESCRIPTION = '%s\'s Thoughts and Writings' % AUTHOR
 SITESUBTITLE = 'PhD Student at Cleveland State University'
-SITEURL = ''
-#https://eriveltongualter.github.io/GSoC2018/index.html
+SITEURL = 'https://eriveltongualter.github.io/GSoC2018/'
 
 PATH = 'content'
 STATIC_PATHS = ['pdfs']
@@ -41,7 +40,8 @@ MAIN_MENU = True
 #HOME_HIDE_TAGS = True
 
 MENUITEMS = [('About', '/pages/about.html'),
-	     ("Blog", "/blog.html"),]
+	     ("Blog", "/blog.html"),
+	     ("Documentation", "/pages/documentation.html")]
 
 PLUGIN_PATHS = [join(expanduser("~"), 'src', 'pelican-plugins'), "plugins"]
 PLUGINS = ['pelican_youtube']
@@ -53,6 +53,9 @@ DEFAULT_METADATA = {'yeah': 'it is'}
 COPYRIGHT_YEAR = 2018
 
 DEFAULT_PAGINATION = 10
+
+FEED_ALL_RSS = 'feeds/all.rss.xml'
+CATEGORY_FEED_RSS = 'feeds/%s.rss.xml'
 
 #THEME = 'Flex'
 THEME = u'theme'

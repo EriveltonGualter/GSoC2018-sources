@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta id="viewport" name="viewport" content="width=500" />
+    <!--RSS FEEDS-->
+        <link rel="alternate" href="https://eriveltongualter.github.io/GSoC2018/feeds/all.rss.xml" type="application/rss+xml" title="Erivelton's GSoC 2018 Full RSS Feed"/>
+
+    <title>First Evaluation - week 4 // Erivelton's GSoC 2018</title>
+    <link rel="stylesheet" href="./theme/css/normalize.css" type="text/css" />
+    <link rel="stylesheet" href="./theme/css/base.css" type="text/css" />
+    <link rel="stylesheet" href="./theme/css/code.css" type="text/css" />
+<link rel="stylesheet" href="./theme/css/article.css" type="text/css" />
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+            tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]},
+            TeX: { equationNumbers: { autoNumber: "all" } }
+        });
+    </script>
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</head>
+<body>
+    <!--Top image-->
+    <div class="container">
+        <div class="topimage">
+            <img src="theme/images/gsococtave.png">
+        </div>
+    </div>
+
+    <!--Links and site title-->
+    <div class="topbar">
+        <span><a href="./">Erivelton's GSoC 2018</a></span>
+        <ul>
+                <li><a href="./pages/about.html">About</a></li>
+                <li><a href="./blog.html">Blog</a></li>
+                <li><a href="./pages/documentation.html">Documentation</a></li>
+        </ul>
+    </div>
+    <!--Content, footer, and scripts-->
+    <div class="container">
+    <div class="page-title">
+        <h1>First Evaluation - week 4</h1>
+        <p style="text-align:justify">June 10, 2018 &mdash; under
+            <a class="post-category" href="./tag/gsoc.html">GSoC</a>,
+            <a class="post-category" href="./tag/octave.html">Octave</a>
+        </p>
+    </div>
+    <p>So, here is my last post before the first evaluation. If you have been following <a class="reference external" href="https://eriveltongualter.github.io/GSoC2018/">my blog</a> or <a class="reference external" href="http://planet.octave.org/">octave blog</a>, you know that the purpose of this google summer of code project is to create an <a class="reference external" href="https://summerofcode.withgoogle.com/projects/#5842927301951488">Interactive Tool for Single Input Single Output (SISO) Linear Control System Design</a>. Also, well-known as sisotool in matlab control system desgin toolbox.</p>
+<p>The work done in this period resutled in 5 posts about the work I have done with the help of my mentors Douglas Stewart and John Swensen. The first post is about the community bounding period, and the remaining posts were done every week and described my work update for that specific week. Here is a list of posts in case you desire to go over.</p>
+<ul class="simple">
+<li><a class="reference external" href="https://eriveltongualter.github.io/GSoC2018/week3.html">Geeting closer to the First Evaluation - week 3</a></li>
+<li><a class="reference external" href="https://eriveltongualter.github.io/GSoC2018/week2.html">Plots are Working - week 2</a></li>
+<li><a class="reference external" href="https://eriveltongualter.github.io/GSoC2018/week1.html">Code begins - week 1</a></li>
+<li><a class="reference external" href="https://eriveltongualter.github.io/GSoC2018/bonding.html">Community Bonding Period</a></li>
+<li><a class="reference external" href="https://eriveltongualter.github.io/GSoC2018/welcome-gsoc.html">Welcome to Octave and Google Summer of Code</a></li>
+</ul>
+<p>So, according to the timeline proposed in the community bounding period for the first evaluation, the tool should have a basic sisotool interface where the user can add/remove poles/zeros being real or complex. Also, it should have the dragging functionality, where the user can click and reposition the elements to the desired position on root locus diagram.</p>
+<p>All the goals were achieved and new functionalities were also added. Therefore, here is a review of what we have so far.</p>
+<p>As of now, the sisotool is executed by running GUI_sisotool where it two GUI interfaces will be displayed. The first one is the Interactive Tool and the second one consists of the diagrams, such as: <em>root locus</em>, <em>nyquist</em> and <em>bode diagram</em>.</p>
+<div class="figure align-center">
+<img alt="alternate text" src="images/sisotoolFirstEvaluation.png" style="width: 800px;" />
+</div>
+<p><strong>Enter with transfer function</strong>: The user can enter with the LTI model on the input field using any m script command, such as tf and zpk. For example:</p>
+<div class="highlight"><pre><span></span><span class="n">tf</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span> <span class="mi">6</span> <span class="mi">11</span> <span class="mi">6</span><span class="p">])</span>
+<span class="n">zpk</span><span class="p">([],</span> <span class="p">[</span><span class="o">-</span><span class="mi">1</span> <span class="o">-</span><span class="mi">2</span> <span class="o">-</span><span class="mi">3</span><span class="p">],</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+<p>Both results in the same plant.</p>
+<p><strong>Diagrams</strong>: As already mentioned, the sisotool can show three different diagrams plus the step response which will be always displayed in the main tool. The interactive diagrams are: root locus, nyquist and bode. Therefore, the user can select the check box with the desired diagrams.</p>
+<p><strong>Root Locus Editor</strong>: Here the idea is for the user to be able to add the following features:</p>
+<ul class="simple">
+<li>Real Pole;</li>
+<li>Complex Pole;</li>
+<li>Real Zero;</li>
+<li>Complex Zero;</li>
+<li>Integrator;</li>
+<li>Differentiator;</li>
+<li>Lead;</li>
+<li>Lag;</li>
+<li>Notch.</li>
+</ul>
+<p>Currently, only the poles and zeros functionalities are working. Therefore, the users are able to select what feature to add to the controller. By selecting the Add check box, we can click on the root locus diagram and add the feature.
+In addition, we can adjust the position of the pole/zero using the dragging functionality. For this, we need to select the check box “Add”. We can even delete the feature by checking the Delete box and clicking on the pole/zero.</p>
+<p>For now, the gain can be adjusted by the slider element where it will move the eigenvalues on closed loop system. However, during this week I will be working to replace this slider by the dragging the eigenvalues to find the desired gain.</p>
+<p>Here is an illustration video of the current tool. This video shows the user using the tool and testing several plants. Then, it shows how to choose the desired diagrams. Finally, adding/grabbing and deleting poles/zeros in order to desing a controller to control the desired plan and save it to workspace is also desmonstrated.</p>
+<div class="youtube"><iframe src="https://www.youtube.com/embed/PYWVGbZ1AIg" width="640" height="480" allowfullscreen seamless frameBorder="0"></iframe></div><p><em>For this post, the video does not contain audio, but for the next video I will record myself explaning the tool as it goes.</em></p>
+<p>Also, I would like to invite you to try it yourself. I would be much happier if you could give me any feedback or comments.</p>
+<p><em>Download current version:</em></p>
+<div class="highlight"><pre><span></span>git clone git@github.com:EriveltonGualter/octave-control.git
+<span class="nb">cd</span> octave-control
+make install
+</pre></div>
+<p>Run Octave, add the control package and open sisotool by running:</p>
+<div class="highlight"><pre><span></span><span class="n">pkg</span> <span class="n">load</span> <span class="n">control</span>
+<span class="n">GUI_sisotool</span>
+</pre></div>
+<p>See you in my next post.</p>
+
+
+    <div class="comments">
+        <div id="disqus_thread"></div>
+        <script type="text/javascript">
+            /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+            var disqus_shortname = "https-eriveltongualter-github-io-gsoc2018"; // required: replace example with your forum shortname
+
+            /* * * DON'T EDIT BELOW THIS LINE * * */
+            (function() {
+                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    </div>
+
+
+
+<div class="container bottom">
+    <hr>
+    <p>
+        Theme created by <a href="https://github.com/jcrist">Jim Crist</a>.
+        Licensed under <a href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons</a>.
+    </p>
+    <p>
+    Find me on <a href="https://twitter.com/EGualter">Twitter</a>, <a 
+        href="https://github.com/EriveltonGualter">GitHub</a>, old personal <a href="https://eriveltongualter.github.io/">webpage</a>, or shoot me an <a
+    href="mailto:erivelton.gualter@gmail.com">email</a>.
+    </p>
+</div>    </div>
+</body>
+</html>

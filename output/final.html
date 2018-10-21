@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta id="viewport" name="viewport" content="width=500" />
+    <!--RSS FEEDS-->
+        <link rel="alternate" href="https://eriveltongualter.github.io/GSoC2018/feeds/all.rss.xml" type="application/rss+xml" title="Erivelton's GSoC 2018 Full RSS Feed"/>
+
+    <title>Final Post // Erivelton's GSoC 2018</title>
+    <link rel="stylesheet" href="./theme/css/normalize.css" type="text/css" />
+    <link rel="stylesheet" href="./theme/css/base.css" type="text/css" />
+    <link rel="stylesheet" href="./theme/css/code.css" type="text/css" />
+<link rel="stylesheet" href="./theme/css/article.css" type="text/css" />
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+            tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]},
+            TeX: { equationNumbers: { autoNumber: "all" } }
+        });
+    </script>
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</head>
+<body>
+    <!--Top image-->
+    <div class="container">
+        <div class="topimage">
+            <img src="theme/images/gsococtave.png">
+        </div>
+    </div>
+
+    <!--Links and site title-->
+    <div class="topbar">
+        <span><a href="./">Erivelton's GSoC 2018</a></span>
+        <ul>
+                <li><a href="./pages/about.html">About</a></li>
+                <li><a href="./blog.html">Blog</a></li>
+                <li><a href="./pages/documentation.html">Documentation</a></li>
+        </ul>
+    </div>
+    <!--Content, footer, and scripts-->
+    <div class="container">
+    <div class="page-title">
+        <h1>Final Post</h1>
+        <p style="text-align:justify">August 13, 2018 &mdash; under
+            <a class="post-category" href="./tag/gsoc.html">GSoC</a>,
+            <a class="post-category" href="./tag/octave.html">Octave</a>
+        </p>
+    </div>
+    <p>The Google Summer of Code program is over and I am positive I have gained so many experience in this period and additionally I have been done a significant work for GNU Octave about the Sisotool. Therefore, in this last post I all will go over in the project, describe what have been done and also point out what still pending of improvements.</p>
+<div class="section" id="overview-of-the-task">
+<h2>Overview of the task</h2>
+<p>The proposal of my project is aiming to create an Interactive Tool for Single Input Single Output (SISO) Linear Control System Design, also known as sisotool. The main goal consist in create a tool which allows the user to interactively modify a controller and apply it to the plant in a variety of closed-loop configurations/topologies. The interactivity allow the user to add &amp; move poles and zeros in the root locus diagram, and implement common controller architectures like PD, PID, and Lead &amp; Lag controllers, as well as assess performance through common diagrams such at Bode plots, Nyquist plots, root locus plots, and step response plots.</p>
+<p>All the work were posted along the summer and can be found on this blog, as weel, in the following shortcut for the posts:</p>
+<ul class="simple">
+<li><a class="reference external" href="https://eriveltongualter.github.io/GSoC2018/welcome-gsoc.html">Welcome to Octave and Google Summer of Code</a>.</li>
+<li><a class="reference external" href="https://eriveltongualter.github.io/GSoC2018/bonding.html">Community Bonding Period</a>.</li>
+<li><a class="reference external" href="https://eriveltongualter.github.io/GSoC2018/week1.html">Code begins - week 1</a>.</li>
+<li><a class="reference external" href="https://eriveltongualter.github.io/GSoC2018/week2.html">Plots are Working - week 2</a>.</li>
+<li><a class="reference external" href="https://eriveltongualter.github.io/GSoC2018/week3.html">Geeting closer to the First Evaluation - week 3</a>.</li>
+<li><a class="reference external" href="https://eriveltongualter.github.io/GSoC2018/week4.html">First Evaluation - week 4</a>.</li>
+<li><a class="reference external" href="https://eriveltongualter.github.io/GSoC2018/week5-6.html">Back to Coding</a>.</li>
+<li><a class="reference external" href="https://eriveltongualter.github.io/GSoC2018/week7.html">Edit Compensantor Dynamics</a>.</li>
+<li><a class="reference external" href="https://eriveltongualter.github.io/GSoC2018/week8.html">Second Evaluation - week 8</a>.</li>
+</ul>
+<p>and the repository for the project is found in: <a class="reference external" href="https://github.com/EriveltonGualter/octave-control/">https://github.com/EriveltonGualter/octave-control/</a></p>
+</div>
+<div class="section" id="overview-of-the-tool">
+<h2>Overview of the tool</h2>
+<p>The interactive tool (sisotool) lets the user design a Single Input Single Output Linear Controller for feedback system. This tool allow the user to perform this task by:</p>
+<ul class="simple">
+<li>Adding, Modifying and Removing poles, zeros and gains of the controller;</li>
+<li>Interactive Root Locus graphical editor;</li>
+<li>Compare multiple control system design through the step or impulse response, as well, control effort of the controller;</li>
+<li>Design controller for a traditional feedback control architecture or  multi-loop control architectures.</li>
+</ul>
+<p>The following subsections will describe what the tool is able to do; however, the reader can jump to the documentation page: <a class="reference external" href="https://eriveltongualter.github.io/GSoC2018/pages/documentation.html">https://eriveltongualter.github.io/GSoC2018/pages/documentation.html</a></p>
+<div class="figure align-center">
+<img alt="alternate text" src="images/final1.png" />
+</div>
+</div>
+<div class="section" id="diagrams">
+<h2>Diagrams</h2>
+<p>The tool provide an interactive visualization of the tool. The user can visualize the feature of the controller and plants by the diagrams:</p>
+<ul class="simple">
+<li>Root Locus diagram;</li>
+<li>Bode diagram;</li>
+<li>Nyquist diagram.</li>
+</ul>
+<p>Additionally, the root locus diagram contains the feature to add, adjust and remove poles, zeros and gains.</p>
+<div class="figure align-center">
+<img alt="alternate text" src="images/final2.png" />
+</div>
+</div>
+<div class="section" id="id1">
+<h2>Edit Compensantor Dynamics</h2>
+<p>In order to achieve the design goals, the user can choose to use the <em>Edit Compensantos Dynamics</em>. It consist in another dialog box where the features of the controller can be edited. This dialog box provides the option to select the desired compensator. By default, the compesator transfer function <em>C</em> is selected. However, it can be easily modified by the compensator menu. As weel, the user can add, edit and remove poles, zeros, gains, Integrator and differentiator plants.</p>
+<div class="figure align-center">
+<img alt="alternate text" src="images/final3.png" />
+</div>
+</div>
+<div class="section" id="compare-controllers-performance">
+<h2>Compare Controllers Performance</h2>
+<p>The tool also provides the user an option to compare performance of multiple control system designs. This is very useful for the user to evaluate the controllers, and make assumptions about effort control tradeoffs and other analysis.</p>
+<div class="figure align-center">
+<img alt="alternate text" src="images/final4.png" />
+</div>
+</div>
+<div class="section" id="control-architecture">
+<h2>Control Architecture</h2>
+<p>Besides the traditional feedback control architecture, the tool also allow the user to choose between 5 others architecture which contains a variety of inner and outer loop with feedback controllers.</p>
+<div class="figure align-center">
+<img alt="alternate text" src="images/final5.png" />
+</div>
+</div>
+<div class="section" id="notes-for-developers">
+<h2>Notes for developers</h2>
+<p>All the code is written in M scripting language and the following files were added:</p>
+<ul class="simple">
+<li><strong>sisotool.m</strong> – Consist in the algorithm to read the inputs and treat it before open the sisotool interface.</li>
+<li><strong>GUI_sisotool.m</strong> – Contains the main code for the Interface.</li>
+<li><strong>editcontroller.m</strong> – Contains the code of the Edit Controller Interface.</li>
+<li><strong>editarchitecture.m</strong> – Contains the code of the Control Architecture.</li>
+</ul>
+<p>Also, the following existent files were slightly modified:</p>
+<ul class="simple">
+<li><strong>bode.m</strong>.</li>
+<li><strong>rlocus.m</strong>.</li>
+</ul>
+</div>
+<div class="section" id="future">
+<h2>Future</h2>
+<p>I had a wonderful summer working for GNU Octave and I plan on continuing to contribute on this project. I believe I have accomplished nice achievements in such a short time period. The tool is ready to be used, but it still needs to be more stable and there are a lot of features that still can be added. I already know a lot of folks which are interesting in help to improve this tool.</p>
+<p>I would like to say thank you for my mentors, Doug Stewart and John Swensen. Also I would like to say thank you Alexander Wilms for such great tips on github. Finally, A huge thank you for the community for the opportunity to work on this project.</p>
+</div>
+
+
+    <div class="comments">
+        <div id="disqus_thread"></div>
+        <script type="text/javascript">
+            /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+            var disqus_shortname = "https-eriveltongualter-github-io-gsoc2018"; // required: replace example with your forum shortname
+
+            /* * * DON'T EDIT BELOW THIS LINE * * */
+            (function() {
+                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    </div>
+
+
+
+<div class="container bottom">
+    <hr>
+    <p>
+        Theme created by <a href="https://github.com/jcrist">Jim Crist</a>.
+        Licensed under <a href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons</a>.
+    </p>
+    <p>
+    Find me on <a href="https://twitter.com/EGualter">Twitter</a>, <a 
+        href="https://github.com/EriveltonGualter">GitHub</a>, old personal <a href="https://eriveltongualter.github.io/">webpage</a>, or shoot me an <a
+    href="mailto:erivelton.gualter@gmail.com">email</a>.
+    </p>
+</div>    </div>
+</body>
+</html>
